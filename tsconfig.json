@@ -10,11 +10,15 @@
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "verbatimModuleSyntax": false,
+    
 
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "skipLibCheck": true,
+    "experimentalDecorators": true, 
+    "emitDecoratorMetadata": true ,
+    "strictPropertyInitialization": false,
 
     "incremental": true,
     "tsBuildInfoFile": ".tsbuildinfo",
