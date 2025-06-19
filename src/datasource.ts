@@ -1,4 +1,8 @@
 import { DataSource } from "typeorm";
+import { Actor } from "./entities/actor.entity";
+import { FilmActor } from "./entities/film_actor.entity";
+
+
 
 export const appDataSource = new DataSource({
   type: process.env.DB_TYPE as any, // 'mysql'
@@ -9,5 +13,6 @@ export const appDataSource = new DataSource({
   database: process.env.DB_NAME,
   synchronize: process.env.DB_SYNCHRONIZE === 'true',
   logging: process.env.DB_LOGGING === 'true',
-  entities: ['src/entities/*.ts'], // or use explicit list
+  entities: [Actor,FilmActor],
+
 });

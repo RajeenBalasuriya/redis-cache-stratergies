@@ -1,26 +1,22 @@
-import {
-  Entity, BaseEntity, PrimaryColumn, Column,
-  ManyToOne, JoinColumn
-} from 'typeorm';
-import { Actor } from './actor.entity';
-import { Film } from './film.entity';
+import {BaseEntity,Entity,PrimaryGeneratedColumn,Column, PrimaryColumn, UpdateDateColumn, ManyToOne, JoinColumn} from "typeorm"
+import { Actor } from "./actor.entity";
 
 @Entity()
-export class FilmActor extends BaseEntity {
-  @PrimaryColumn()
-  actor_id: number;
+export class FilmActor extends BaseEntity{
 
-  @PrimaryColumn()
-  film_id: number;
+    @PrimaryColumn({ type: 'smallint', unsigned: true })
+    actor_id:number;
+ 
+    @PrimaryColumn({ type: 'smallint', unsigned: true })
+    film_id:number;
 
-  @Column({ type: 'timestamp' })
-  last_update: Date;
+    @UpdateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
+    last_update: Date;
 
-  @ManyToOne(() => Actor, actor => actor.film_actors)
-  @JoinColumn({ name: 'actor_id' })
-  actor: Actor;
+    @ManyToOne(()=>Actor,actor=>actor.filmActors,{ onDelete: 'RESTRICT', onUpdate: 'CASCADE' })
+    @JoinColumn({name:'actor_id'})
+    actor:Actor
 
- @ManyToOne(()=>Film,(film)=>film.film_actors)
- @JoinColumn({name:'film_id'})
- film:Film
+    
+    
 }

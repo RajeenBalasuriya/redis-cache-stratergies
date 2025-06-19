@@ -1,31 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2022",
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
-    "lib": ["esnext"],
+    "target": "es2020",
+    "module": "commonjs",
     "rootDir": "src",
     "outDir": "dist",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-    "verbatimModuleSyntax": false,
-    
-
     "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "experimentalDecorators": true, 
-    "emitDecoratorMetadata": true ,
-    "strictPropertyInitialization": false,
-
-    "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo",
-    "sourceMap": false,
-
-    "isolatedModules": false
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+  "exclude": ["node_modules", "dist"]
 }

@@ -1,9 +1,18 @@
+
 import express from "express";
 import { Request, Response } from "express";
 import { appDataSource } from "./datasource";
+import actorRouter from "./routes/actorRoutes";
+
 
 const app = express();
+
+//define route paths
 app.use(express.json());
+
+
+
+app.use("/actors",actorRouter);
 
 //allow application to listen on a port
 const PORT = process.env.PORT || 3001;
